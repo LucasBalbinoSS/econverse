@@ -9,8 +9,8 @@ interface ProdutosProps {
   mostrarCategorias?: boolean;
 }
 
-const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true, ...props }) => {
-  const [produtos, setProdutos] = useState<typeof produtosDados.products>(produtosDados.products)
+const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
+  const [produtos] = useState<typeof produtosDados.products>(produtosDados.products)
   const categoriasProdutos = listaCategorias[0].produtosRelacionados
 
   return (
