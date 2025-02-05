@@ -1,0 +1,47 @@
+.categorias {
+  max-width: 1141px;
+  margin: 0 auto;
+  padding-block: .625rem;
+
+  &__lista {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    justify-content: space-between;
+  }
+
+  &__item {
+    transition: color 300ms ease;
+    cursor: pointer;
+  }
+
+  &__item[data-categoria="categoria-assinatura"] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__item:hover {
+    color: #3019B2;
+  }
+
+  &__item-4 {
+    color: #3019B2;
+  }
+}
+
+@media (max-width: 1023px) {
+  .categorias {
+    &__lista {
+      overflow-x: scroll;
+      scrollbar-width: none;
+      gap: 22px;
+    }
+
+    &__item {
+      white-space: nowrap;
+    }
+  }
+}

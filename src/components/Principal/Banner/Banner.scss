@@ -1,0 +1,84 @@
+@use '../../../index';
+
+.banner {
+  background-image: url('../../../assets/bannerPrincipal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  background-position: 70%;
+
+  &__fundo {
+    background-image: linear-gradient(to right, #000000, transparent);
+    height: 100%;
+    padding-inline: 1rem;
+  }
+
+  &__interno {
+    display: flex;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 41px;
+  }
+
+  &__titulo {
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 600;
+    color: index.$branco;
+  }
+
+  &__texto {
+    margin-top: 15px;
+    color: index.$branco;
+    font-size: 32px;
+
+    span {
+      font-weight: 700;
+      color: index.$amarelo;
+    }
+  }
+
+  &__botao {
+    background-color: index.$amarelo;
+    color: index.$roxo;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-block: 13px;
+    padding-inline: 54.5px;
+    cursor: pointer;
+    width: max-content;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  &__botao:hover {
+    background-color: #ffbb00;
+    color: index.$branco;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banner {
+    text-align: center;
+
+    &__interno {
+      height: 100%;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__titulo {
+      font-size: 35px;
+      line-height: 35px;
+    }
+
+    &__texto {
+      margin-top: 25px;
+      font-size: 22px;
+    }
+  }
+}

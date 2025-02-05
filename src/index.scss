@@ -1,0 +1,21 @@
+// variaveis
+$azul: #3442B5;
+$amarelo: #f7ca11;
+$roxo: #271C47;
+$cinza-500: #9F9F9F;
+$cinza-900: #3F3F40;
+$branco: #FFF;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body,
+input,
+button {
+  font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,45 @@
+@use '../../../index';
+
+.busca {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .busca {
+    display: flex;
+    background-color: #F6F5F2;
+    border-radius: 10px;
+    width: 630px;
+
+    &__campo {
+      background-color: transparent;
+      border: none;
+      padding-block: .875rem;
+      padding-inline: 1rem;
+      flex-grow: 1;
+      color: index.$cinza-500;
+    }
+
+    &__campo::placeholder {
+      font-weight: 500;
+      color: index.$cinza-500;
+    }
+
+    &__campo:focus {
+      outline: none;
+    }
+
+    &__botao {
+      background-color: transparent;
+      border: none;
+      padding-inline: 1rem;
+      cursor: pointer;
+      transition: opacity 200ms ease;
+    }
+
+    &__botao:hover {
+      opacity: .5;
+    }
+  }
+
+}

@@ -1,0 +1,41 @@
+@use '../../../index.scss';
+
+.marcas {
+  padding-inline: 1rem;
+
+  &__interno {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__titulo {
+    text-align: center;
+    font-size: 30px;
+    color: index.$azul;
+  }
+
+  &__lista {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding-bottom: 90px;
+
+    &__item {
+      width: 211px;
+      height: 211px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(211, 211, 211, 0.205);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      flex-shrink: 0;
+
+      img {
+        width: max-content;
+      }
+    }
+  }
+}

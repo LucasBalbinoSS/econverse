@@ -1,0 +1,19 @@
+.parceiros {
+  padding-inline: 1rem;
+
+  &__interno {
+    margin: 0 auto 90px auto;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .parceiros {
+    &__interno {
+      flex-direction: column;
+    }
+  }
+}

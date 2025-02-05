@@ -1,0 +1,57 @@
+
+@use '../../../../index.scss';
+
+.parceiro {
+  background-image: url('../../../../assets/bannerParceiro.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  flex-grow: 1;
+  border-radius: 15px;
+
+  max-width: 634px;
+
+  &__fundo {
+    background-image: linear-gradient(to top, #000000cb, transparent);
+    height: 100%;
+    border-radius: 15px;
+    padding-inline: 44px;
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__titulo {
+    font-size: 40px;
+    color: index.$branco;
+    font-weight: 700;
+  }
+
+  &__texto {
+    color: index.$branco;
+    margin-top: 8px;
+  }
+
+  &__botao {
+    background-color: index.$amarelo;
+    color: index.$roxo;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    padding-inline: 26px;
+    padding-block: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 200ms ease, color 200ms ease;
+    width: max-content;
+    font-size: 16px;
+    margin-top: 32px;
+    letter-spacing: 8%;
+  }
+
+  &__botao:hover {
+    background-color: #ffbb00;
+    color: index.$branco;
+  }
+}

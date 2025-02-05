@@ -1,0 +1,59 @@
+@use '../../../index.scss';
+
+.categorias-principal {
+  max-width: 1160px;
+  margin: 39px auto 90px auto;
+  margin-top: 39px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  gap: 42px;
+  padding-inline: 1rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    div {
+      width: 128px;
+      height: 128px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F4F4F4;
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+      border-radius: 10px;
+      transition: background-color 200ms ease;
+    }
+
+  }
+
+  &__item:hover &__nome {
+    color: #3019B2;
+  }
+
+  &__item:hover div {
+    background-color: index.$branco;
+  }
+
+  &__nome {
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4E4E4E;
+    margin-top: 22px;
+
+    transition: color 200ms ease;
+  }
+
+  .categorias-principal__item-tecnologia &__nome{
+    color: #3019B2;
+  }
+
+  .categorias-principal__item-tecnologia div {
+    background-color: index.$branco;
+  }
+}
