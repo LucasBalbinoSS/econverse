@@ -33,11 +33,11 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true, ...props 
       </div>
       <ul className="produtos__lista">
         {produtos.map((produto) => (
-          <li key={produto.productName} className="produtos__item">
+          <li key={produto.id} className="produtos__item">
             <img className="produtos__imagem" src={produto.photo} alt={produto.productName} />
             <p className="produtos__descricao">{produto.descriptionShort}</p>
             <div className="produtos__informacoes">
-              <span className="produtos__de">De R$ {produto.price * 2},00</span>
+              <span className="produtos__de">De R$ {produto.price * 1.5},00</span>
               <span className="produtos__por">Por R$ {produto.price},00</span>
               <span className="produtos__pagamento">ou 2x de R$ {produto.price / 2},00 sem juros</span>
               <span className="produtos__frete">Frete grátis</span>
