@@ -11,7 +11,7 @@ Observação: A página é 100% responsiva 📱 💻
 
 ---
 
-## Resolutions]
+## Resoluções
 ### Desktop 👇
 ![image](https://github.com/user-attachments/assets/84a473d2-e593-412a-acab-0e450ad112a3)
 
