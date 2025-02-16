@@ -205,6 +205,7 @@
       font-size: 20px;
       font-weight: 400;
       color: index.$cinza-900;
+      text-transform: uppercase;
     }
 
     &__preco {
@@ -293,8 +294,20 @@
 }
 
 @media (max-width: 800px) {
-  .modal__interno {
-    flex-direction: column;
+  .modal {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    &__interno {
+      flex-direction: column;
+
+      &__fechar,
+      &__compra__quantidade__mais,
+      &__compra__quantidade__menos {
+        width: 28px;
+      }
+    }
+
   }
 }
 

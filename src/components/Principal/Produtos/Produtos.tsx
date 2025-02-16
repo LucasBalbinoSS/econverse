@@ -9,16 +9,20 @@ import fechar from '../../../assets/fechar.svg'
 import listaCategorias from '../../../utils/listaCategorias'
 
 interface ProdutosProps {
-  mostrarCategorias?: boolean;
+  mostrarCategorias?: boolean
 }
 
 const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
   const [produtos] = useState<typeof produtosDados.products>(produtosDados.products)
+  const [produtoSelecionado, setProdutoSelecionado] = useState<typeof produtosDados.products[0] | null>(null)
   const categoriasProdutos = listaCategorias[0].produtosRelacionados
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [count, setCount] = useState(1)
 
-  function toggleDialog() {
+  function toggleDialog(produto: typeof produtosDados.products[0]) {
+    setProdutoSelecionado(produto)
+    console.log(produto)
+
     if (!dialogRef.current) {
       return
     }
@@ -69,16 +73,17 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
               <span className="produtos__pagamento">ou 2x de R$ {produto.price / 2},00 sem juros</span>
               <span className="produtos__frete">Frete grátis</span>
             </div>
-            <button onClick={toggleDialog} className="produtos__botao-comprar">Comprar</button>
+            <button onClick={() => toggleDialog(produto)} className="produtos__botao-comprar">Comprar</button>
             <dialog className="modal" ref={dialogRef}>
+            {produtoSelecionado && (
               <div className="modal__interno">
-                <img onClick={toggleDialog} className='modal__interno__fechar' src={fechar} alt="Ícone de x para fechar o modal." />
+                <img onClick={() => toggleDialog(produto)} className='modal__interno__fechar' src={fechar} alt="Ícone de x para fechar o modal." />
                 <div>
-                  <img className='modal__interno__imagem' src={produto.photo} alt={produto.productName} />
+                  <img className='modal__interno__imagem' src={produtoSelecionado.photo} alt={produtoSelecionado.productName} />
                 </div>
                 <div className="modal__interno__info">
-                  <h2 className='modal__interno__titulo'>{produto.productName}</h2>
-                  <span className='modal__interno__preco'>R$ {produto.price},00</span>
+                  <h2 className='modal__interno__titulo'>{produtoSelecionado.productName}</h2>
+                  <span className='modal__interno__preco'>R$ {produtoSelecionado.price},00</span>
                   <p className='modal__interno__descricao'>Many desktop publishing packages and web page<br/>editors now many desktop publishing.</p>
                   <span className='modal__interno__detalhes'>Veja mais detalhes do produto &gt;</span>
                   <div className="modal__interno__compra">
@@ -91,6 +96,7 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
                   </div>
                 </div>
               </div>
+            )}
             </dialog>
           </li>
         ))}
@@ -99,7 +105,7 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
         <img src={setaDireita} alt="Imagem de seta à direita" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Produtos;
+export default Produtos
