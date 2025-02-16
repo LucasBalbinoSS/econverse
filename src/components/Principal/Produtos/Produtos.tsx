@@ -27,6 +27,8 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
       return
     }
 
+    setCount(1)
+
     dialogRef.current.hasAttribute("open")
       ? dialogRef.current.close()
       : dialogRef.current.showModal()
