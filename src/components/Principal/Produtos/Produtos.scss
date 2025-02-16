@@ -292,6 +292,12 @@
   }
 }
 
+@media (max-width: 800px) {
+  .modal__interno {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 1023px) {
   .produtos__lista {
     flex-direction: column;
