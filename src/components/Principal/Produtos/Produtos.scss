@@ -294,6 +294,10 @@
   }
 }
 
+.modal::backdrop {
+  background-color: #00000048;
+}
+
 @media (max-width: 1023px) {
   .produtos__lista {
     flex-direction: column;
