@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion'
+import fadeIn from '../../variants'
+
 import './Rodape.scss'
 import logoEconverse from '../../assets/Logo.svg'
 import instagram from '../../assets/instagram.svg'
@@ -6,7 +9,13 @@ import linkedin from '../../assets/linkedin.svg'
 
 const Rodape = () => {
   return(
-    <footer className='rodape'>
+    <motion.footer
+      className='rodape'
+      variants={fadeIn("", 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{once: true}}
+    >
       <div className="rodape__limite-1">
         <div className='rodape__interno-1'>
           <div className='rodape__interno-1__textos-newsletter'>
@@ -83,7 +92,7 @@ const Rodape = () => {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

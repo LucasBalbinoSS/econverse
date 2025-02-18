@@ -1,8 +1,17 @@
+import { motion } from 'framer-motion'
+import fadeIn from '../../../variants'
+
 import './Banner.scss'
 
 const Banner = () => {
   return(
-    <section className="banner">
+    <motion.section
+      className="banner"
+      variants={fadeIn("", 0.4)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{once: true}}
+    >
       <div className="banner__fundo">
         <div className="banner__interno">
           <div className="banner__textos">
@@ -12,7 +21,7 @@ const Banner = () => {
           <button className="banner__botao">Ver produto</button>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

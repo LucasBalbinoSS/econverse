@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion'
+import fadeIn from '../../../variants'
+
 import React, { useState, useRef } from 'react'
 import produtosDados from '../../../utils/produtos.json'
 import './Produtos.scss'
@@ -47,9 +50,21 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
   }
 
   return (
-    <div className='produtos'>
+    <motion.div
+      className='produtos'
+      variants={fadeIn("", 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{once: true}}
+    >
       <h2 className='produtos__titulo'>Produtos relacionados</h2>
-      <ul className='produtos__categorias' data-mostrar-categorias={mostrarCategorias}>
+      <motion.ul
+        className='produtos__categorias' data-mostrar-categorias={mostrarCategorias}
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{once: true}}
+      >
         {mostrarCategorias === true && (
           categoriasProdutos.map((categoria) => {
             return(
@@ -60,13 +75,20 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
         {mostrarCategorias === false && (
           <li className='produtos__categorias__item'>Ver todos</li>
         )}
-      </ul>
+      </motion.ul>
       <div className='produtos__seta-esquerda'>
         <img src={setaEsquerda} alt="Imagem de seta à esquerda" />
       </div>
       <ul className="produtos__lista">
         {produtos.map((produto) => (
-          <li key={produto.id} className="produtos__item">
+          <motion.li
+          key={produto.id}
+          className="produtos__item"
+          variants={fadeIn("up", produto.id/5)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once: false}}
+      >
             <img className="produtos__imagem" src={produto.photo} alt={produto.productName} />
             <p className="produtos__descricao">{produto.descriptionShort}</p>
             <div className="produtos__informacoes">
@@ -100,13 +122,13 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
               </div>
             )}
             </dialog>
-          </li>
+          </motion.li>
         ))}
       </ul>
       <div className='produtos__seta-direita'>
         <img src={setaDireita} alt="Imagem de seta à direita" />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
