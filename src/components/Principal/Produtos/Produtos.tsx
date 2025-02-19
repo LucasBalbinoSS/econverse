@@ -70,6 +70,10 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
     setTimeout(() => setShowConfetti(false), 100)
   }
 
+  function transicaoDelay(alvo: number) {
+    return alvo/22
+  }
+
   return (
     <motion.div
       className='produtos'
@@ -105,10 +109,10 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
           <motion.li
           key={produto.id}
           className="produtos__item"
-          variants={fadeIn("up", produto.id/5)}
+          variants={fadeIn("up", transicaoDelay(produto.id))}
           initial="hidden"
           whileInView={"show"}
-          viewport={{once: false}}
+          viewport={{once: true, amount: 0.2}}
       >
             <img className="produtos__imagem" src={produto.photo} alt={produto.productName} />
             <p className="produtos__descricao">{produto.descriptionShort}</p>
