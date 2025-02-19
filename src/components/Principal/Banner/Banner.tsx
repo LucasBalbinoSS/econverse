@@ -18,7 +18,7 @@ const Banner = () => {
             <h1 className='banner__titulo'>Venha conhecer nossas<br/>promoções</h1>
             <p className='banner__texto'><span>50% Off</span> nos produtos </p>
           </div>
-          <button className="banner__botao">Ver produto</button>
+          <button className="banner__botao">Ver produtos</button>
         </div>
       </div>
     </motion.section>
