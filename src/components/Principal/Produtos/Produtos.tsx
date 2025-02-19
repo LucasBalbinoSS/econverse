@@ -41,7 +41,6 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
 
   function toggleDialog(produto: typeof produtosDados.products[0]) {
     setProdutoSelecionado(produto)
-    console.log(produto)
 
     if (!dialogRef.current) {
       return
