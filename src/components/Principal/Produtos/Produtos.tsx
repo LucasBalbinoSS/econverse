@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import fadeIn from '../../../variants'
 
+// confetti
+import Confetti from 'react-dom-confetti'
+
 import React, { useState, useRef } from 'react'
 import produtosDados from '../../../utils/produtos.json'
 import './Produtos.scss'
@@ -21,6 +24,20 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
   const categoriasProdutos = listaCategorias[0].produtosRelacionados
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [count, setCount] = useState(1)
+  const [showConfetti, setShowConfetti] = useState(false)
+
+  const config = {
+    angle: 193,
+    spread: 360,
+    startVelocity: 29,
+    elementCount: 93,
+    dragFriction: 0.12,
+    duration: 3420,
+    stagger: 3,
+    width: "10px",
+    height: "10px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+  }
 
   function toggleDialog(produto: typeof produtosDados.products[0]) {
     setProdutoSelecionado(produto)
@@ -47,6 +64,11 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
     }
 
     setCount(count - 1)
+  }
+
+  function handleComprar() {
+    setShowConfetti(true)
+    setTimeout(() => setShowConfetti(false), 100)
   }
 
   return (
@@ -116,7 +138,10 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
                       <span className='modal__interno__compra__quantidade__contador'>{count}</span>
                       <img onClick={plusCount} className='modal__interno__compra__quantidade__mais' src={mais} alt="Ícone de menos" />
                     </div>
-                    <button className='modal__interno__compra__botao'>Comprar</button>
+                    <button onClick={handleComprar} className='modal__interno__compra__botao'>
+                      Comprar
+                      <Confetti config={config} active={showConfetti} />
+                    </button>
                   </div>
                 </div>
               </div>
