@@ -1,7 +1,7 @@
 # Econverse (React + TypeScript)
 👉 [Clique aqui para ver o projeto](https://lucasbalbinoss.github.io/econverse/)
 
-Neste projeto, tive a oportunidade de aprimorar minhas habilidades em React, aplicando boas práticas utilizando componentização. Além disso, foquei na estilização precisa (_pixel perfect_) utilizando SCSS, garantindo um design fiel ao layout. 📚
+Neste projeto, tive a oportunidade de aprimorar minhas habilidades em React, aplicando boas práticas utilizando componentização. Além disso, foquei na estilização precisa (_pixel perfect_) utilizando SCSS juntamente com leves transições, garantindo um design fiel ao layout. 📚
   
 Nessa página o usuário pode:
 - Visualizar uma variedade de **produtos** e suas respectivas informações, **carregadas dinamicamente** a partir de um arquivo JSON
