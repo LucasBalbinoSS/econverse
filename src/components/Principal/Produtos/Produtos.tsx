@@ -133,7 +133,7 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
                 <div className="modal__interno__info">
                   <h2 className='modal__interno__titulo'>{produtoSelecionado.productName}</h2>
                   <span className='modal__interno__preco'>R$ {produtoSelecionado.price},00</span>
-                  <p className='modal__interno__descricao'>Many desktop publishing packages and web page<br/>editors now many desktop publishing.</p>
+                  <p className='modal__interno__descricao'>{produtoSelecionado.description}</p>
                   <span className='modal__interno__detalhes'>Veja mais detalhes do produto &gt;</span>
                   <div className="modal__interno__compra">
                     <div className='modal__interno__compra__quantidade'>
