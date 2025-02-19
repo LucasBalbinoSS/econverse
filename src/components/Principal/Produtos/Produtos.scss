@@ -80,7 +80,6 @@
     width: 304px;
     padding-inline: 12.39px;
     padding-block: 16px;
-    flex-direction: column;
     border-radius: 10px;
     border: 1px solid rgba(211, 211, 211, 0.363);
     background-color: index.$branco;
@@ -305,13 +304,22 @@
 }
 
 @media (max-width: 1023px) {
-  .produtos__lista {
-    flex-direction: column;
-  }
+  .produtos {
+    &__lista {
+      flex-direction: column;
+    }
 
-  .produtos__seta-esquerda,
-  .produtos__seta-direita {
-    display: none;
+    &__seta-esquerda,
+    &__seta-direita {
+      display: none;
+    }
+
+    &__item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 370px;
+    }
   }
 
   .modal {
