@@ -17,7 +17,8 @@
   &__lista {
     margin-top: 32px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 42px;
     overflow-x: scroll;
     scrollbar-width: none;
     padding-bottom: 90px;
