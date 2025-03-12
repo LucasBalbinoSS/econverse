@@ -11,6 +11,7 @@ Como rodar este projeto 👇
 4. Abra seu explorador de arquivos e navegue até a nova pasta do projeto que foi clonado
 5. Abra-o no Visual Studio Code
 6. Execute o comando `npm run dev` e cole o link local no seu navegador de preferência
+7. Abra o modal de algum produto e clique em "Comprar" 👀 🥳 
 
 ---
 
