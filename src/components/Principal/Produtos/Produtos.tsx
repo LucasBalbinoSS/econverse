@@ -114,7 +114,7 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
           whileInView={"show"}
           viewport={{once: true, amount: 0.2}}
       >
-            <img className="produtos__imagem" src={produto.photo} alt={produto.productName} />
+            <img className="produtos__imagem" src={produto.photo} alt={produto.productName} loading='lazy' />
             <p className="produtos__descricao">{produto.descriptionShort}</p>
             <div className="produtos__informacoes">
               <span className="produtos__de">De R$ {produto.price * 1.5},00</span>

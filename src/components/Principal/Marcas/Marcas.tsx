@@ -23,19 +23,19 @@ const Marcas = () => {
           viewport={{once: false}}
         >
           <li className='marcas__lista__item'>
-            <img src={logoEconverse} alt="Marca Econverse." />
+            <img src={logoEconverse} alt="Marca Econverse." loading='lazy' />
           </li>
           <li className='marcas__lista__item'>
-            <img src={logoEconverse} alt="Marca Econverse." />
+            <img src={logoEconverse} alt="Marca Econverse." loading='lazy' />
           </li>
           <li className='marcas__lista__item'>
-            <img src={logoEconverse} alt="Marca Econverse." />
+            <img src={logoEconverse} alt="Marca Econverse." loading='lazy' />
           </li>
           <li className='marcas__lista__item'>
-            <img src={logoEconverse} alt="Marca Econverse." />
+            <img src={logoEconverse} alt="Marca Econverse." loading='lazy' />
           </li>
           <li className='marcas__lista__item'>
-            <img src={logoEconverse} alt="Marca Econverse." />
+            <img src={logoEconverse} alt="Marca Econverse." loading='lazy' />
           </li>
         </motion.ul>
       </div>

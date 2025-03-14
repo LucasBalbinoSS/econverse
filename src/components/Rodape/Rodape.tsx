@@ -38,7 +38,7 @@ const Rodape = () => {
       <div className="rodape__limite-2">
         <div className='rodape__interno-2'>
           <div className='rodape__interno-2__informacoes'>
-            <img className='rodape__interno-2__informacoes__logo' src={logoEconverse} alt="Logo da empresa EConverse." />
+            <img className='rodape__interno-2__informacoes__logo' src={logoEconverse} alt="Logo da empresa EConverse." loading='lazy' />
             <p>Lorem ipsum dolor sit amet, consectetur<br/>adipiscing elit.</p>
             <ul className='rodape__interno-2__informacoes__sociais'>
               <li>
