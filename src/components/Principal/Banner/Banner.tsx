@@ -7,7 +7,7 @@ const Banner = () => {
   return(
     <motion.section
       className="banner"
-      variants={fadeIn("", 0.4)}
+      variants={fadeIn("", 0.9)}
       initial="hidden"
       whileInView={"show"}
       viewport={{once: true}}
