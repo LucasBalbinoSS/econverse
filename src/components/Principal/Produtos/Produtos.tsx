@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
+import axios from 'axios'
 import fadeIn from '../../../variants'
 
 // confetti
 import Confetti from 'react-dom-confetti'
 
-import React, { useState, useRef } from 'react'
-import produtosDados from '../../../utils/produtos.json'
+import React, { useEffect, useState, useRef } from 'react'
 import './Produtos.scss'
 import setaEsquerda from '../../../assets/setaEsquerda.svg'
 import setaDireita from '../../../assets/setaDireita.svg'
@@ -19,8 +19,12 @@ interface ProdutosProps {
 }
 
 const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
-  const [produtos] = useState<typeof produtosDados.products>(produtosDados.products)
-  const [produtoSelecionado, setProdutoSelecionado] = useState<typeof produtosDados.products[0] | null>(null)
+  const [produtos, setProdutos] = useState<Produto[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+
+  const [produtoSelecionado, setProdutoSelecionado] = useState<Produto | null>(null)
   const categoriasProdutos = listaCategorias[0].produtosRelacionados
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [count, setCount] = useState(1)
@@ -39,15 +43,37 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
     colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
   }
 
-  function toggleDialog(produto: typeof produtosDados.products[0]) {
-    setProdutoSelecionado(produto)
+  interface Produto {
+    productName: string
+    description: string
+    descriptionShort: string
+    price: number
+    photo: string
+  }
 
-    if (!dialogRef.current) {
-      return
+  useEffect(() => {
+    async function fetchProdutos() {
+      try {
+        const response = await fetch("http://localhost:3333/api/products")
+        const data = await response.json()
+        setProdutos(data)
+      } catch (error) {
+        console.error("Erro ao buscar produtos:", error)
+      }
     }
-
-    setCount(1)
-
+  
+    fetchProdutos()
+  }, [])
+  
+  function toggleDialog(produto: Produto) {
+    setProdutoSelecionado(produto);
+  
+    if (!dialogRef.current) {
+      return;
+    }
+  
+    setCount(1);
+  
     dialogRef.current.hasAttribute("open")
       ? dialogRef.current.close()
       : dialogRef.current.showModal()
@@ -68,10 +94,6 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
   function handleComprar() {
     setShowConfetti(true)
     setTimeout(() => setShowConfetti(false), 100)
-  }
-
-  function transicaoDelay(alvo: number) {
-    return alvo/22
   }
 
   return (
@@ -107,9 +129,9 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
       <ul className="produtos__lista">
         {produtos.map((produto) => (
           <motion.li
-          key={produto.id}
+          key={produto.price}
           className="produtos__item"
-          variants={fadeIn("up", transicaoDelay(produto.id))}
+          variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{once: true, amount: 0.2}}
@@ -133,7 +155,7 @@ const Produtos: React.FC<ProdutosProps> = ({ mostrarCategorias = true }) => {
                 <div className="modal__interno__info">
                   <h2 className='modal__interno__titulo'>{produtoSelecionado.productName}</h2>
                   <span className='modal__interno__preco'>R$ {produtoSelecionado.price},00</span>
-                  <p className='modal__interno__descricao'>{produtoSelecionado.description}</p>
+                  <p className='modal__interno__descricao'>Many desktop publishing packages and web page editors now many desktop publishing.</p>
                   <span className='modal__interno__detalhes'>Veja mais detalhes do produto &gt;</span>
                   <div className="modal__interno__compra">
                     <div className='modal__interno__compra__quantidade'>
