@@ -26,7 +26,6 @@ Nessa página o usuário pode:
 - Visualizar uma página **100% responsiva** 📱 💻
 
 Links:
-- 👉 [Deploy do projeto](https://lucasbalbinoss.github.io/econverse/)
 - 👉 [Acesse meu portfólio para ver mais projetos como esse](https://lucasbalbinoss.com/)
 
 ---
