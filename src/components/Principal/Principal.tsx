@@ -15,7 +15,7 @@ const Principal = () => {
       <Produtos mostrarCategorias={false} />
       <Parceiros />
       <Marcas />
-      <Produtos mostrarCategorias={false} /
+      <Produtos mostrarCategorias={false} />
     </>
   )
 }
