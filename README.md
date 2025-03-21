@@ -11,9 +11,10 @@ Como rodar este projeto 👇
 4. Abra seu explorador de arquivos e navegue até a nova pasta do projeto que foi clonado
 5. Abra-o no Visual Studio Code
 6. No terminal do VS Code, execute o comando `npm install` para instalar as dependências do projeto
-7. Em seguida, execute o comando `npm run server` para executar o backend.
-8. Agora, para executar o frontend, rode o comando `npm run dev`. Copie e cole o link local no seu navegador de preferência
-9. Abra o modal de algum produto e clique em "Comprar" 👀 🥳 
+7. Em seguida, execute o comando `npm run server` para executar o backend
+8. Agora, para executar o frontend, abra um novo terminal e rode o comando `npm run dev`
+9. Será gerado um link em seu terminal, clique nele mantendo o `ctrl` pressionado e o projeto será aberto em seu navegador
+10. Abra o modal de algum produto e clique em "Comprar" 👀 🥳 
 
 ---
 
